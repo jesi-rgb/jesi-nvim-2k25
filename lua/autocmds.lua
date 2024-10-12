@@ -27,15 +27,12 @@ local global_snippets = {
 }
 
 local snippets_by_filetype = {
-
   javascript = {
     { trigger = 'cons', body = 'console.log(${1:log}) $0' },
   },
-
   typescript = {
     { trigger = 'cons', body = 'console.log(${1:log}) $0' },
   },
-
   svelte = {
     { trigger = 'cons', body = 'console.log(${1:log}) $0' },
   },

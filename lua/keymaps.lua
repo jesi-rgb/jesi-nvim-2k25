@@ -19,6 +19,9 @@ vim.keymap.set('n', '<leader>gp', '<CMD>Git push<CR>')
 vim.keymap.set('n', '<leader>gg', '<CMD>G<CR>')
 vim.keymap.set('n', '<leader>gm', '<CMD>Git commit<CR>')
 
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+
 -- add a comment and test
 
 vim.keymap.set('s', '(', ')')
