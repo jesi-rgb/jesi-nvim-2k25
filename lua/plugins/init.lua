@@ -31,4 +31,8 @@ return {
 
   { 'evanleck/vim-svelte' },
   { 'nvim-lualine/lualine.nvim' },
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+  },
 }
