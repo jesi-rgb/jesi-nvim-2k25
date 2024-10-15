@@ -189,22 +189,6 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
-vim.keymap.set('n', '<leader>w-', '<C-w>s', { desc = 'Create a window below' })
-vim.keymap.set('n', '<leader>wr', '<C-w><C-V>', { desc = 'Create a window to the right' })
-
-vim.keymap.set('n', '<leader>wd', '<CMD>q<Enter>', { desc = 'Delete window' })
-vim.keymap.set('n', '<leader>ww', '<C-W><C-W>', { desc = 'Delete window' })
-
-vim.keymap.set('n', '<right>', '<CMD>:vert :res +5<Enter>', { desc = 'Increase window width by 5' })
-vim.keymap.set('n', '<left>', '<CMD>:vert :res -5<Enter>', { desc = 'Descrease window width by 5' })
-
-vim.keymap.set('n', '<up>', '<CMD>:res +5<Enter>', { desc = 'Increase window width by 5' })
-vim.keymap.set('n', '<down>', '<CMD>:res -5<Enter>', { desc = 'Descrease window width by 5' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -418,6 +402,7 @@ require('lazy').setup({
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })

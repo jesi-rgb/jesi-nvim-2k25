@@ -28,6 +28,7 @@ vim.keymap.set('s', '(', ')')
 vim.keymap.set('s', '[', ']')
 
 local builtin = require 'telescope.builtin'
+local actions = require 'telescope.actions'
 vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
@@ -44,3 +45,38 @@ vim.keymap.set('n', 'j', function()
   end
   return 'gj'
 end, { expr = true })
+
+local function find_and_split_into_file()
+  builtin.find_files {
+    attach_mappings = function(_, map)
+      -- This is where you handle the selected file
+      actions.select_default:replace(function(prompt_bufnr)
+        -- Get the selected entry
+        local action_state = require 'telescope.actions.state'
+        local file = action_state.get_selected_entry().path
+        -- Close Telescope window
+        require('telescope.actions').close(prompt_bufnr)
+        -- Split and open the selected file
+        vim.cmd('topleft vsplit ' .. file)
+      end)
+      return true
+    end,
+  }
+end
+-- window management
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>w-', '<C-w>s', { desc = 'Create a window below' })
+vim.keymap.set('n', '<leader>wr', find_and_split_into_file, { desc = 'Search and create a buffer to the left' })
+
+vim.keymap.set('n', '<leader>wd', '<CMD>q<Enter>', { desc = 'Delete window' })
+vim.keymap.set('n', '<leader>ww', '<C-W><C-W>', { desc = 'Delete window' })
+
+vim.keymap.set('n', '<right>', '<CMD>:vert :res +5<Enter>', { desc = 'Increase window width by 5' })
+vim.keymap.set('n', '<left>', '<CMD>:vert :res -5<Enter>', { desc = 'Descrease window width by 5' })
+
+vim.keymap.set('n', '<up>', '<CMD>:res +5<Enter>', { desc = 'Increase window width by 5' })
+vim.keymap.set('n', '<down>', '<CMD>:res -5<Enter>', { desc = 'Descrease window width by 5' })
