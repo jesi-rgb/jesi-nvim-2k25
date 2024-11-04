@@ -29,6 +29,10 @@ return {
 
   { 'ThePrimeagen/harpoon' },
 
+  {
+    'Exafunction/codeium.vim',
+  },
+
   { 'evanleck/vim-svelte' },
   { 'nvim-lualine/lualine.nvim' },
   {
