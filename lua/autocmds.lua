@@ -33,6 +33,9 @@ local snippets_by_filetype = {
   typescript = {
     { trigger = 'cons', body = 'console.log(${1:log}) $0' },
   },
+  typescriptreact = {
+    { trigger = 'cons', body = 'console.log(${1:log}) $0' },
+  },
   svelte = {
     { trigger = 'cons', body = 'console.log(${1:log}) $0' },
   },

@@ -84,11 +84,11 @@ vim.keymap.set('n', '<down>', '<CMD>:res -5<Enter>', { desc = 'Descrease window 
 -- copilot stuff
 -- create a new window for copilot
 
-local chat = require 'CopilotChat'
-vim.keymap.set('n', '<leader>gl', '<cmd>CopilotChat<CR>', { desc = 'Open copilot panel' })
-
-vim.keymap.set('v', '<leader>ge', '<cmd>CopilotChatExplain<CR>', { desc = 'Explain selection' })
-vim.keymap.set('v', '<leader>gf', '<cmd>CopilotChatFix<CR>', { desc = 'Explain selection' })
+-- local chat = require 'CopilotChat'
+-- vim.keymap.set('n', '<leader>gl', '<cmd>CopilotChat<CR>', { desc = 'Open copilot panel' })
+--
+-- vim.keymap.set('v', '<leader>ge', '<cmd>CopilotChatExplain<CR>', { desc = 'Explain selection' })
+-- vim.keymap.set('v', '<leader>gf', '<cmd>CopilotChatFix<CR>', { desc = 'Explain selection' })
 
 function Ask_copilot_with_selection()
   -- Get the selected text range
