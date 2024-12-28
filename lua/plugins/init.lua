@@ -3,7 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -16,16 +15,6 @@ return {
     'L3MON4D3/LuaSnip',
   },
   { 'tpope/vim-fugitive' },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    opts = { disable_background = true },
-  },
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    opts = { flavour = 'auto' },
-  },
   { 'ThePrimeagen/harpoon' },
   {
     'zbirenbaum/copilot.lua',
@@ -41,23 +30,10 @@ return {
   {
     'yetone/avante.nvim',
   },
-
-  {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require('copilot_cmp').setup()
-    end,
-  },
-
   { 'evanleck/vim-svelte' },
   { 'nvim-lualine/lualine.nvim' },
   {
     'folke/flash.nvim',
-    event = 'VeryLazy',
-  },
-  {
-    'kylechui/nvim-surround',
-    version = '*', -- Use for stability; omit to use `main` branch for the latest features
     event = 'VeryLazy',
   },
 }

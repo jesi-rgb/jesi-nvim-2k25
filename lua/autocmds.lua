@@ -116,4 +116,27 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer', keyword_length = 1 },
   },
+  sorting = {
+    priority_weight = 1, -- Optional: Give higher weight to priorities.
+
+    comparators = {
+      function(entry1, entry2)
+        -- Custom priority logic
+        local source_priority = {
+          snp = 1, -- Custom snippets
+          nvim_lsp = 2, -- Emmet snippets
+        }
+        local priority1 = source_priority[entry1.source.name] or 100
+        local priority2 = source_priority[entry2.source.name] or 100
+        if priority1 ~= priority2 then
+          return priority1 < priority2
+        end
+      end,
+
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.kind,
+    },
+  },
 }
