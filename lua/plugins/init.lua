@@ -36,4 +36,9 @@ return {
     'folke/flash.nvim',
     event = 'VeryLazy',
   },
+  {
+    'davidmh/mdx.nvim',
+    config = true,
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
 }
