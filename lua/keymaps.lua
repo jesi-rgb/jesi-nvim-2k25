@@ -81,15 +81,4 @@ vim.keymap.set('n', '<left>', '<CMD>:vert :res -5<Enter>', { desc = 'Descrease w
 vim.keymap.set('n', '<up>', '<CMD>:res +5<Enter>', { desc = 'Increase window width by 5' })
 vim.keymap.set('n', '<down>', '<CMD>:res -5<Enter>', { desc = 'Descrease window width by 5' })
 
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'Ball',
-  callback = function()
-    require('avante.config').override {
-      system_prompt = 'Do not explain anything, no yapping. Unless explicitly asked, please do not explain. Just return code ready to be pasted.',
-    }
-  end,
-})
-
-vim.keymap.set('n', '<leader>am', function()
-  vim.api.nvim_exec_autocmds('User', { pattern = 'Ball' })
-end, { desc = 'avante: toggle my ass' })
+vim.api.nvim_set_keymap('n', '<leader>t', ':lua Switch_theme()<CR>', { noremap = true })

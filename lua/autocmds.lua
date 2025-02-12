@@ -140,3 +140,18 @@ cmp.setup {
     },
   },
 }
+
+-- Function to detect system theme and switch between two themes
+function Switch_theme()
+  -- Detect system theme (example for macOS)
+  local theme = vim.fn.system 'defaults read -g AppleInterfaceStyle'
+  if theme:lower():match 'dark' then
+    -- Load your dark theme
+    print 'Switching to dark theme'
+    vim.api.nvim_command 'colorscheme github_dark_dimmed'
+  else
+    -- Load your light theme
+    print 'Switching to light theme'
+    vim.api.nvim_command 'colorscheme github_light_colorblind'
+  end
+end
