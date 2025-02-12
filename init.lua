@@ -123,6 +123,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+vim.api.nvim_create_user_command('Wa', 'wa', {})
+
 vim.o.textwidth = 80
 vim.o.wrap = false
 
