@@ -16,7 +16,7 @@ return {
       },
     },
     dual_boost = {
-      enabled = true,
+      enabled = false,
       first_provider = 'deepseek',
       second_provider = 'claude',
       prompt = 'Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]',
