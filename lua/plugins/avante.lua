@@ -7,6 +7,14 @@ return {
 
   opts = {
     provider = 'claude',
+
+    claude = {
+      endpoint = 'https://api.anthropic.com',
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 8192,
+      disable_tools = true, -- disable tools!
+    },
     vendors = {
       deepseek = {
         __inherited_from = 'openai',
