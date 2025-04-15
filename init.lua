@@ -648,6 +648,16 @@ require('lazy').setup({
             },
           },
         },
+        ruff = {
+          settings = {
+            -- Configure Ruff settings here
+            ruff = {
+              -- Enable Ruff for autocompletion
+              enableCompletions = true,
+              -- You can add other Ruff-specific settings here
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed

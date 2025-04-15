@@ -16,6 +16,7 @@ return {
   },
   { 'tpope/vim-fugitive' },
   { 'ThePrimeagen/harpoon' },
+
   {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
