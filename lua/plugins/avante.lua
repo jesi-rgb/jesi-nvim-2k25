@@ -6,10 +6,10 @@ return {
   version = false, -- set this if you want to always pull the latest change
 
   opts = {
-    provider = 'claude',
+    provider = 'openrouter',
 
     claude = {
-      endpoint = 'https://api.anthropic.com',
+      endpoint = 'https://api.anthropic.com/',
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
       max_tokens = 8192,
@@ -21,6 +21,12 @@ return {
         api_key_name = 'DEEPSEEK_API_KEY',
         endpoint = 'https://api.deepseek.com',
         model = 'deepseek-chat',
+      },
+      openrouter = {
+        __inherited_from = 'openai',
+        api_key_name = 'OPENROUTER_API_KEY',
+        endpoint = 'https://openrouter.ai/api/v1',
+        model = 'anthropic/claude-3.7-sonnet',
       },
     },
     dual_boost = {
