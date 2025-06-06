@@ -7,15 +7,16 @@ return {
 
   opts = {
     provider = 'openrouter',
-
-    claude = {
-      endpoint = 'https://api.anthropic.com/',
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 8192,
-      disable_tools = true, -- disable tools!
-    },
-    vendors = {
+    providers = {
+      claude = {
+        endpoint = 'https://api.anthropic.com/',
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 8192,
+          disable_tools = true, -- disable tools!
+        },
+      },
       deepseek = {
         __inherited_from = 'openai',
         api_key_name = 'DEEPSEEK_API_KEY',
