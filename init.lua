@@ -870,7 +870,11 @@ require('lazy').setup({
           },
         },
       }
+
       vim.cmd 'colorscheme github_light'
+
+      require 'autocmds'
+      Switch_theme()
     end,
   },
 
