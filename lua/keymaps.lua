@@ -18,6 +18,8 @@ vim.keymap.set('n', '<leader>gaa', '<CMD>Git add .<CR>')
 vim.keymap.set('n', '<leader>gp', '<CMD>Git push<CR>')
 vim.keymap.set('n', '<leader>gg', '<CMD>G<CR>')
 vim.keymap.set('n', '<leader>gm', '<CMD>Git commit<CR>')
+vim.keymap.set('n', '<leader>w', ':write<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>fp', ':<C-U>let @+ = expand("%")<CR>', { noremap = true, silent = true, desc = 'Copy relative file path' })
 
