@@ -17,9 +17,6 @@ return {
   { 'tpope/vim-fugitive' },
   { 'ThePrimeagen/harpoon' },
 
-  {
-    'yetone/avante.nvim',
-  },
   { 'evanleck/vim-svelte' },
   { 'nvim-lualine/lualine.nvim' },
   {
